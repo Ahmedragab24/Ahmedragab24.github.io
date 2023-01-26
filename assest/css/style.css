@@ -942,7 +942,7 @@ body.light-theme {
   }
 
   .home--img {
-    width: 130px;
+    width: 150px;
   }
 
   .about--info {
@@ -974,6 +974,17 @@ body.light-theme {
   }
 }
 
+@media screen and (max-width: 575px) {
+  .home--handel {
+    width: 180px;
+    height: 263px;
+  }
+
+  .home--img {
+    width: 170px;
+  }
+}
+
 /* For medium devices */
 @media screen and (min-width: 576px) {
   .nav--menu {
@@ -981,6 +992,11 @@ body.light-theme {
     left: 0;
     right: 0;
     margin: 0 auto;
+  }
+
+ 
+  .home--img {
+    width: 180px;
   }
 
   .about--info {
