@@ -255,6 +255,12 @@ body.light-theme {
   color: var(--first-color);
   font-weight: var(--font-medium);
   transition: .4s;
+  margin-top: 10px;
+}
+
+.nav--logo-img {
+  width: 150px;
+  height: 75px;
 }
 
 .nav--logo:hover {
@@ -692,7 +698,14 @@ body.light-theme {
 
 .work--img {
   border-radius: 1rem;
-  margin-bottom: .75rem;
+  margin-bottom: .75rem; 
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Style the Image Used to Trigger the Modal */
+.work--img:hover{
+  opacity: 0.7;
 }
 
 .work--title {
@@ -724,6 +737,57 @@ body.light-theme {
 .active-work {
   background-color: var(--first-color);
   color: var(--body-color);
+}
+
+/* img-model */
+.active-img-pop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(20px);
+  z-index: 10000;
+  background: #0b051a46;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  transition: 0.5s;
+}
+
+.active-img-pop.active {
+  transform: translateX(0);
+}
+
+.pop-close {
+  top: 0;
+  left: 30px;
+  font-size: var(--font-medium);
+}
+
+.div-img {
+  width: 850px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+@media (max-width:750px) {
+  .active-img-pop {
+      display: none;
+  }
+  .div-img {
+      width: 90% !important;
+  }
+}
+
+.div-img img {
+  width: 100%;
+  height: auto;
+  transform: scale(1.05);
 }
 
 /*=============== TESTIMONIAL ===============*/
@@ -1175,3 +1239,5 @@ body.light-theme {
     border-radius: .5rem;
   }
 }
+
+

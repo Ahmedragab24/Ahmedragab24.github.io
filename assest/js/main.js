@@ -100,36 +100,6 @@ window.addEventListener('scroll', scrollActive)
 
 // // =============================================  Dark Light Theme  ==========================================
 
-// const themeButton = document.getElementById('theme-button')
-// const lightTheme = 'light-theme'
-// const iconTheme = 'fa-sun'
-
-// // Previously selected topic (if user selected)
-// const selectedTheme = localStorage.getItem('selected-theme');
-// const selectedIcon = localStorage.getItem('selected-icon');
-
-// // We obtain the current theme that the interface has by validating the light-theme class
-// const getCurrentTheme = () => document.body.classList.contains(lightTheme) ? 'dark' : 'light'
-// const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'fa-solid fa-moon' : 'fa-solid fa-sun'
-
-// // We validate if the user previously chose a topic
-// if (selectedTheme) {
-//   // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the light
-// document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](lightTheme)
-// themeButton.classList[selectedIcon === 'fa-solid fa-moon' ? 'add' : 'remove'](iconTheme)
-// }
-
-// // Activate / deactivate the theme manually with the button
-// themeButton.addEventListener('click', () => {
-//     // Add or remove the light / icon theme
-//     document.body.classList.toggle(lightTheme)
-//     themeButton.classList.toggle(iconTheme)
-//     // We save the theme and the current icon that the user chose
-//     localStorage.setItem('selected-theme', getCurrentTheme())
-//     localStorage.setItem('selected-icon', getCurrentIcon())
-// })
-
-
 const themeButton = document.getElementById('theme-button')
 const lightTheme = 'light-theme'
 const iconTheme = 'ri-sun-line'
@@ -138,20 +108,20 @@ const iconTheme = 'ri-sun-line'
 const selectedTheme = localStorage.getItem('selected-theme')
 const selectedIcon = localStorage.getItem('selected-icon')
 
-// We obtain the current theme that the interface has by validating the dark-theme class
+// We obtain the current theme that the interface has by validating the ligth-theme class
 const getCurrentTheme = () => document.body.classList.contains(lightTheme) ? 'dark' : 'light'
 const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line'
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the light
   document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](lightTheme)
   themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
 }
 
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener('click', () => {
-    // Add or remove the dark / icon theme
+    // Add or remove the light / icon theme
     document.body.classList.toggle(lightTheme)
     themeButton.classList.toggle(iconTheme)
     // We save the theme and the current icon that the user chose
@@ -159,7 +129,7 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 
-/*===================================================== SCROLL REVEAL ANIMATION =====================================*/
+/*=============================================== SCROLL REVEAL ANIMATION =====================================*/
 const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
@@ -168,13 +138,114 @@ const sr = ScrollReveal({
     // reset: true,
 })
 
-sr.reveal('.home--data, .section--title, .section--subtitle')
+sr.reveal('.home--data, .section--title, .section--subtitle, .work')
 sr.reveal('.home--handel, .skills--content', {delay: 700})
 sr.reveal('.home--social, .home--scroll, .testimonial', {delay: 900, origin: 'bottom'})
 sr.reveal('.about--box-img, .services--container, .contact-left', {delay: 900, origin: 'left'})
-sr.reveal('.about--data, .work, .contact-right', {delay: 900, origin: 'right'})
+sr.reveal('.about--data, .contact-right', {delay: 900, origin: 'right'})
 
 
 
-// ===============================================================================================================
+// =============================================  IMGES-MODEL  ===============================================
+
+
+let activeimgpop = document.querySelector(".active-img-pop");
+let imgcontntjs = document.querySelectorAll(".row .box");
+let divimg = document.querySelector(".div-img");
+
+
+
+imgcontntjs.forEach((element) => {
+    element.addEventListener("click", function(eo) {
+        showactiveimg();
+        let getsrc = element.getElementsByTagName("img")[0].src;
+        let srcimg = divimg.getElementsByTagName("img")[0];
+        srcimg.src = getsrc;
+        console.log(element)
+    });
+});
+
+activeimgpop.addEventListener("click", function() {
+    removeshowactiveimg();
+});
+
+function removeshowactiveimg() {
+    activeimgpop.classList.remove("active");
+}
+
+function showactiveimg() {
+    activeimgpop.classList.add("active");
+}
+
+
+
+
+// ===============================================  PORTFLIO  ============================================
+
+// let allBtn = document.getElementById("all");
+// let webBtn = document.getElementById("web");
+// let graphicBtn = document.getElementById("graphic");
+// let vectorBtn = document.getElementById("vector");
+// let allBtns = Array.from(document.querySelectorAll(".top .right a"));
+
+// let graphicSec = document.getElementById("DesSec");
+// let vectorSec = document.getElementById("VecSec");
+// let webSec = document.getElementById("WebSec");
+// let allSec = webSec.innerHTML + graphicSec.innerHTML + vectorSec.innerHTML;
+
+// // all function
+// allBtn.addEventListener("click", (btn) => {
+//     //remove bg from all btns
+//     webBtn.classList.remove("active");
+//     graphicBtn.classList.remove("active");
+//     vectorBtn.classList.remove("active");
+//     // add a bg to selected btn
+//     btn.target.classList.add("active");
+//     // show imgs
+//     graphicSec.style.display = "block";
+//     webSec.style.display = "block";
+//     vectorSec.style.display = "block";
+// });
+// // vector function
+// vectorBtn.addEventListener("click", (btn) => {
+//     //remove bg from all btns
+//     allBtn.classList.remove("active");
+//     webBtn.classList.remove("active");
+//     graphicBtn.classList.remove("active");
+//     // add a bg to selected btn
+//     btn.target.classList.add("active");
+//     // show imgs
+//     graphicSec.style.display = "none";
+//     webSec.style.display = "none";
+//     vectorSec.style.display = "block";
+
+// });
+// // graphic function
+// graphicBtn.addEventListener("click", (btn) => {
+//     //remove bg from all btns
+//     allBtn.classList.remove("active");
+//     webBtn.classList.remove("active");
+//     vectorBtn.classList.remove("active");
+//     // add a bg to selected btn
+//     btn.target.classList.add("active");
+//     // show imgs
+//     graphicSec.style.display = "block";
+//     webSec.style.display = "none";
+//     vectorSec.style.display = "none";
+
+// });
+// // web function
+// webBtn.addEventListener("click", (btn) => {
+//     //remove bg from all btns
+//     allBtn.classList.remove("active");
+//     graphicBtn.classList.remove("active");
+//     vectorBtn.classList.remove("active");
+//     // add a bg to selected btn
+//     btn.target.classList.add("active");
+//     // show imgs
+//     graphicSec.style.display = "none";
+//     webSec.style.display = "block";
+//     vectorSec.style.display = "none";
+
+// });
 
