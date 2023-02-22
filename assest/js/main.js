@@ -34,25 +34,25 @@ modalClose.forEach((mc) => {
 
 /*==================================== MIXITUP FILTER PORTFOLIO ===================================*/
 
-let mixerProtfolio = mixitup('.work--container', {
-    selectors: {
-        target: '.work--card'
-    },
-    animation: {
-        duration: 300
-    },
+// let mixerProtfolio = mixitup('.work--container', {
+//     selectors: {
+//         target: '.work--card'
+//     },
+//     animation: {
+//         duration: 300
+//     },
 
-});
+// });
 
-/* Link active work */ 
-const linkWork = document.querySelectorAll('.work--item')
+// /* Link active work */ 
+// const linkWork = document.querySelectorAll('.work--item')
 
-function activeWork () {
-    linkWork.forEach(l => l.classList.remove('active-work'))
-    this.classList.add('active-work')
-}
+// function activeWork () {
+//     linkWork.forEach(l => l.classList.remove('active-work'))
+//     this.classList.add('active-work')
+// }
 
-linkWork.forEach(l => l.addEventListener('click', activeWork))
+// linkWork.forEach(l => l.addEventListener('click', activeWork))
 
    
 
@@ -184,7 +184,7 @@ function showactiveimg() {
 
 
 let BtnShow  = document.getElementById('Btn-show-more')
-let currentItem = 2;
+let currentItem = 4;
 
 BtnShow.onclick = () =>{
    let boxes = [...document.querySelectorAll('.work--container .work--card ')];
@@ -198,81 +198,5 @@ BtnShow.onclick = () =>{
    }
 }
 
-let allBtns = Array.from(document.querySelectorAll(".work--filters .work--item"));
+// =============================================================================================
 
-allBtns.addEventListener('click', function () {
-    let workCard = document.querySelectorAll('.work--card')
-        workCard.style.display = "block"
-})
-
-
-
-
-
-
-// let allBtn = document.getElementById("all");
-// let webBtn = document.getElementById("Web");
-// let graphicBtn = document.getElementById("Graphic");
-// let vectorBtn = document.getElementById("design");
-// let allBtns = Array.from(document.querySelectorAll(".work--filters .work--item"));
-
-// let graphicSec = document.querySelectorAll(".Graphic-design");
-// let vectorSec = document.querySelectorAll(".design");
-// let webSec = document.querySelectorAll(".web");
-// let allSec = webSec.innerHTML + graphicSec.innerHTML + vectorSec.innerHTML;
-
-// // all function
-// allBtn.addEventListener("click", (btn) => {
-//     //remove bg from all btns
-//     webBtn.classList.remove("active");
-//     graphicBtn.classList.remove("active");
-//     vectorBtn.classList.remove("active");
-//     // add a bg to selected btn
-//     btn.target.classList.add("active");
-//     // show imgs
-//     graphicSec.style.display = "block";
-//     webSec.style.display = "block";
-//     vectorSec.style.display = "block";
-// });
-// // vector function
-// vectorBtn.addEventListener("click", (btn) => {
-//     //remove bg from all btns
-//     allBtn.classList.remove("active");
-//     webBtn.classList.remove("active");
-//     graphicBtn.classList.remove("active");
-//     // add a bg to selected btn
-//     btn.target.classList.add("active");
-//     // show imgs
-//     graphicSec.style.display = "none";
-//     webSec.style.display = "none";
-//     vectorSec.style.display = "block";
-
-// });
-// // graphic function
-// graphicBtn.addEventListener("click", (btn) => {
-//     //remove bg from all btns
-//     allBtn.classList.remove("active");
-//     webBtn.classList.remove("active");
-//     vectorBtn.classList.remove("active");
-//     // add a bg to selected btn
-//     btn.target.classList.add("active");
-//     // show imgs
-//     graphicSec.style.display = "block";
-//     webSec.style.display = "none";
-//     vectorSec.style.display = "none";
-
-// });
-// // web function
-// webBtn.addEventListener("click", (btn) => {
-//     //remove bg from all btns
-//     allBtn.classList.remove("active");
-//     graphicBtn.classList.remove("active");
-//     vectorBtn.classList.remove("active");
-//     // add a bg to selected btn
-//     btn.target.classList.add("active");
-//     // show imgs
-//     graphicSec.style.display = "none";
-//     webSec.style.display = "block";
-//     vectorSec.style.display = "none";
-
-// });
