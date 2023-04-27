@@ -778,8 +778,12 @@ body.light-theme {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateX(100%);
+  transform: translateX(110%);
   transition: 0.5s;
+  -webkit-transform: translateX(110%);
+  -moz-transform: translateX(110%);
+  -ms-transform: translateX(110%);
+  -o-transform: translateX(110%);
 }
 
 .active-img-pop.active {
@@ -841,6 +845,14 @@ body.light-theme {
 }
 
 /* Swiper class */
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  position: relative;
+  transition-property: transform;
+}
+
 .swiper-pagination-bullet {
   background-color: var(--text-color-light);
 }
